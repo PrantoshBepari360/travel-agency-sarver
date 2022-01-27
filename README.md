@@ -1,17 +1,17 @@
-# BD Travel
+# Travel Agency
 
-In the project directory client side repo link [Bd_Travel_Agency](https://github.com/Nozibul/BD_Travel_Agency).
+In the project directory client side repo link [travel-agency](https://github.com/PrantoshBepari360/travel-agency).
 
-In the project directory server side repo link [bd-travel-agency-server](https://github.com/opibarua1111/bd-travel-agency-server).
+In the project directory server side repo link [travel-agency-sarver](https://github.com/PrantoshBepari360/travel-agency-sarver).
 
-In the project directory live side link [Bd-Travel-Agency](https://bd-travel-agency-914b3.web.app/).
+In the project directory live side link [Travel-Agency](https://bd-travel-agency-914b3.web.app/).
 
-- This project uses backend node.Js, express.js, MongoDB database, cors, dotenv, stripe, nodemon, firebase-admin.
+- Client users show review, services, about, blog, and contact. Login users can review services, blog details, purchase bookings, and submit their addresses. Users show their booking in the dashboard for purchase my-order details.
 
-- Admin users can add products, make admin, customize, and manage products.
+- Admin users can add Tour place, make admin, customize, and manage Tour place.
 
-- Client users only show Tour place. Login users can review services, purchase booking, and submit their addresses. Users show their booking in the dashboard for purchase my-order details.
+- Users sign up using google accounts and user email and register for firebase system.
 
-- Users sign up using google accounts and create user email for firebase sestem.
+- This project uses backend node.Js, express.js, MongoDB database, cors, dotenv, stripe, nodemon, firebase-admin and frontend using React.Js, React bootstrap, React-router-dom @v6, React-rating, React-owl-carousel, React-hook-form, React-font awesome, Emailjs-com, Stripe, Axios, and Firebase.
 
-- If a user does not have an email ID, he can create a new account, register, and log in.
+- Login user adds their review and rating.
