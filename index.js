@@ -110,31 +110,23 @@ async function run() {
       res.json(result);
     });
 
-    // app.put("/udpate/:id", async (req, res) => {
-    //   const id = req.params.id;
-    //   const filter = { _id: ObjectId(id) };
-    //   const options = { upsert: true };
-    //   const updatedDoc = {
-    //     $set: {
-    //       status: "Shipped",
-    //     },
-    //   };
-    //   const result = await purchaseCollection.updateOne(
-    //     filter,
-    //     updatedDoc,
-    //     options
-    //   );
+    app.put("/udpate/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: ObjectId(id) };
+      const options = { upsert: true };
+      const updatedDoc = {
+        $set: {
+          status: "Shipped",
+        },
+      };
+      const result = await purchaseCollection.updateOne(
+        filter,
+        updatedDoc,
+        options
+      );
 
-    //   res.json(result);
-    // });
-
-    // // post purchase data
-
-    // app.post("/purchase", async (req, res) => {
-    //   const purchase = req.body;
-    //   const result = await purchaseCollection.insertOne(purchase);
-    //   res.json(result);
-    // });
+      res.json(result);
+    });
 
     // get review data
 
