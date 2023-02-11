@@ -147,15 +147,15 @@ async function run() {
     // get user data
 
     app.get("/users/:email", async (req, res) => {
-        const email = req.params.email;
-        const query = { email: email };
-        const user = await usersCollection.findOne(query);
-        let isAdmin = false;
-        if (user?.role === "admin") {
-          isAdmin = true;
-        }
-        res.json({ admin: isAdmin });
-      });
+      const email = req.params.email;
+      const query = { email: email };
+      const user = await usersCollection.findOne(query);
+      let isAdmin = false;
+      if (user?.role === "admin") {
+        isAdmin = true;
+      }
+      res.json({ admin: isAdmin });
+    });
 
     // post user
 
@@ -202,28 +202,27 @@ async function run() {
 
     // payment status
     app.put("/allOrders/:id", async (req, res) => {
-        const id = req.params.id;
-        const payment = req.body;
-        const filter = { _id: ObjectId(id) };
-        const updateDoc = {
-          $set: {
-            payment: payment,
-          },
-        };
-        const result = await purchaseCollection.updateOne(filter, updateDoc);
-        res.json(result);
-      });
-
+      const id = req.params.id;
+      const payment = req.body;
+      const filter = { _id: ObjectId(id) };
+      const updateDoc = {
+        $set: {
+          payment: payment,
+        },
+      };
+      const result = await purchaseCollection.updateOne(filter, updateDoc);
+      res.json(result);
+    });
 
     // add user admin
 
     app.put("/users/admin", async (req, res) => {
-        const user = req.body;
-        const filter = { email: user.email };
-        const updateDoc = { $set: { role: "admin" } };
-        const result = await usersCollection.updateOne(filter, updateDoc);
-        res.json(result);
-      });
+      const user = req.body;
+      const filter = { email: user.email };
+      const updateDoc = { $set: { role: "admin" } };
+      const result = await usersCollection.updateOne(filter, updateDoc);
+      res.json(result);
+    });
 
     // app.put("/users/admin", verifyToken, async (req, res) => {
     //   const user = req.body;
@@ -245,7 +244,6 @@ async function run() {
     //       .json({ message: "you do not have an access to make admin" });
     //   }
     // });
-
   } finally {
     // await client.close();
   }
